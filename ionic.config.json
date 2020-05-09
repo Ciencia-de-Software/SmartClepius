@@ -1,0 +1,7 @@
+{
+  "name": "SmartClepius",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
