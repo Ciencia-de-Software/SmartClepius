@@ -23,8 +23,18 @@
   </ion-item>
 
   <br />
-  <a><p>*Esqueci minha senha ou e-mail</p></a>
-  <a routerLink="/cadastro"><p>*Não tenho cadastro</p></a>
+  <div class="links-cadastro">
+    <a routerLink="/esqueci-senha">
+      <p>*Esqueci minha senha ou e-mail</p>
+    </a>
+    <a routerLink="/cadastro">
+      <p>*Não tenho cadastro</p>
+    </a>
+  </div>
+
+  <div class="botão-entrar">
+    <ion-button color="secondary">Entrar</ion-button>
+  </div>
 
 </ion-content>
 <ion-button class="botão-inicio" color="danger" expand="block" routerLink="/home">Voltar</ion-button>
