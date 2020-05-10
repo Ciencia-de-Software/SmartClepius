@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'esqueci-senha',
     loadChildren: () => import('./esqueci-senha/esqueci-senha.module').then( m => m.EsqueciSenhaPageModule)
   },
+  {
+    path: 'equipe-hospitalar',
+    loadChildren: () => import('./equipe-hospitalar/equipe-hospitalar.module').then( m => m.EquipeHospitalarPageModule)
+  },
 ];
 
 @NgModule({
