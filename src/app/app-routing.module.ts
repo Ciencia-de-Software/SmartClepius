@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'cadastro',
-    loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
+    loadChildren: () => import('./login/cadastro/cadastro.module').then( m => m.CadastroPageModule)
   },
   {
     path: 'login',
@@ -21,11 +21,15 @@ const routes: Routes = [
   },
   {
     path: 'esqueci-senha',
-    loadChildren: () => import('./esqueci-senha/esqueci-senha.module').then( m => m.EsqueciSenhaPageModule)
+    loadChildren: () => import('./login/esqueci-senha/esqueci-senha.module').then( m => m.EsqueciSenhaPageModule)
   },
   {
     path: 'equipe-hospitalar',
     loadChildren: () => import('./equipe-hospitalar/equipe-hospitalar.module').then( m => m.EquipeHospitalarPageModule)
+  },
+  {
+    path: 'responsavel',
+    loadChildren: () => import('./responsavel/responsavel.module').then( m => m.ResponsavelPageModule)
   },
 ];
 
