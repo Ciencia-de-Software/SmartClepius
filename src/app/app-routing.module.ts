@@ -26,11 +26,19 @@ const routes: Routes = [
   {
     path: 'equipe-hospitalar',
     loadChildren: () => import('./equipe-hospitalar/equipe-hospitalar.module').then( m => m.EquipeHospitalarPageModule)
-  },
+  },/*
   {
     path: 'responsavel',
     loadChildren: () => import('./responsavel/responsavel.module').then( m => m.ResponsavelPageModule)
-  },
+  },*/
+  {
+    path: 'tabs-responsavel',
+    loadChildren: () => import('./tabs-responsavel/tabs-responsavel.module').then( m => m.TabsResponsavelPageModule)
+  },/*
+  {
+    path: 'chat-responsavel',
+    loadChildren: () => import('./responsavel/chat-responsavel/chat-responsavel.module').then( m => m.ChatResponsavelPageModule)
+  },*/
 ];
 
 @NgModule({
