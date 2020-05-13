@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+
 import { TabsResponsavelPage } from './tabs-responsavel.page';
 
 const routes: Routes = [
@@ -9,11 +10,11 @@ const routes: Routes = [
     children: [
       {
         path: 'responsavel',
-        loadChildren: () => import('./responsavel/responsavel.module').then(m => m.ResponsavelPageModule)
+        loadChildren: () => import('../responsavel/responsavel.module').then(m => m.ResponsavelPageModule)
       },
       {
         path: 'chat-responsavel',
-        loadChildren: () => import('./chat-responsavel/chat-responsavel.module').then(m => m.ChatResponsavelPageModule)
+        loadChildren: () => import('../responsavel/chat-responsavel/chat-responsavel.module').then(m => m.ChatResponsavelPageModule)
       },
       {
         path: '',
