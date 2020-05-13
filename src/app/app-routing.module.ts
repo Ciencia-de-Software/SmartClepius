@@ -29,7 +29,7 @@ const routes: Routes = [
   },/*
   {
     path: 'responsavel',
-    loadChildren: () => import('./responsavel/responsavel.module').then( m => m.ResponsavelPageModule)
+    loadChildren: () => import('./tabs-responsavel/responsavel/responsavel.module').then( m => m.ResponsavelPageModule)
   },*/
   {
     path: 'tabs-responsavel',
@@ -37,7 +37,7 @@ const routes: Routes = [
   },/*
   {
     path: 'chat-responsavel',
-    loadChildren: () => import('./responsavel/chat-responsavel/chat-responsavel.module').then( m => m.ChatResponsavelPageModule)
+    loadChildren: () => import('./tabs-responsavel/responsavel/chat-responsavel/chat-responsavel.module').then( m => m.ChatResponsavelPageModule)
   },*/
 ];
 

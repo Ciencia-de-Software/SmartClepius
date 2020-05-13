@@ -9,11 +9,11 @@ const routes: Routes = [
     children: [
       {
         path: 'responsavel',
-        loadChildren: () => import('../responsavel/responsavel.module').then(m => m.ResponsavelPageModule)
+        loadChildren: () => import('./responsavel/responsavel.module').then(m => m.ResponsavelPageModule)
       },
       {
         path: 'chat-responsavel',
-        loadChildren: () => import('../responsavel/chat-responsavel/chat-responsavel.module').then(m => m.ChatResponsavelPageModule)
+        loadChildren: () => import('./chat-responsavel/chat-responsavel.module').then(m => m.ChatResponsavelPageModule)
       },
       {
         path: '',
