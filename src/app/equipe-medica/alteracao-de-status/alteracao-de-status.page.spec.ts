@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { TabsResponsavelPage } from './tabs-responsavel.page';
+import { AlteracaoDeStatusPage } from './alteracao-de-status.page';
 
-describe('TabsResponsavelPage', () => {
-  let component: TabsResponsavelPage;
-  let fixture: ComponentFixture<TabsResponsavelPage>;
+describe('AlteracaoDeStatusPage', () => {
+  let component: AlteracaoDeStatusPage;
+  let fixture: ComponentFixture<AlteracaoDeStatusPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TabsResponsavelPage ],
+      declarations: [ AlteracaoDeStatusPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TabsResponsavelPage);
+    fixture = TestBed.createComponent(AlteracaoDeStatusPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

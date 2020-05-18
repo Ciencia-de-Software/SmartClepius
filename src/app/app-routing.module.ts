@@ -24,21 +24,29 @@ const routes: Routes = [
     loadChildren: () => import('./login/esqueci-senha/esqueci-senha.module').then( m => m.EsqueciSenhaPageModule)
   },
   {
-    path: 'equipe-hospitalar',
-    loadChildren: () => import('./equipe-hospitalar/equipe-hospitalar.module').then( m => m.EquipeHospitalarPageModule)
-  },
-  {
-    path: 'tabs-responsavel',
-    loadChildren: () => import('./tabs-responsavel/tabs-responsavel.module').then( m => m.TabsResponsavelPageModule)
-  },/*
-  {
     path: 'responsavel',
     loadChildren: () => import('./responsavel/responsavel.module').then( m => m.ResponsavelPageModule)
   },
   {
-    path: 'chat-responsavel',
-    loadChildren: () => import('./responsavel/chat-responsavel/chat-responsavel.module').then( m => m.ChatResponsavelPageModule)
-  },*/
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
+  },
+  {
+    path: 'equipe-medica',
+    loadChildren: () => import('./equipe-medica/equipe-medica.module').then( m => m.EquipeMedicaPageModule)
+  },
+  {
+    path: 'messagens',
+    loadChildren: () => import('./chat/messagens/messagens.module').then( m => m.MessagensPageModule)
+  },
+  {
+    path: 'alteracao-de-status',
+    loadChildren: () => import('./equipe-medica/alteracao-de-status/alteracao-de-status.module').then( m => m.AlteracaoDeStatusPageModule)
+  },
+  {
+    path: 'status-paciente',
+    loadChildren: () => import('./responsavel/status-paciente/status-paciente.module').then( m => m.StatusPacientePageModule)
+  }
 ];
 
 @NgModule({

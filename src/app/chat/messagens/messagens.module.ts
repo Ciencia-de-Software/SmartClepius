@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TabsResponsavelPageRoutingModule } from './tabs-responsavel-routing.module';
+import { MessagensPageRoutingModule } from './messagens-routing.module';
 
-import { TabsResponsavelPage } from './tabs-responsavel.page';
+import { MessagensPage } from './messagens.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TabsResponsavelPageRoutingModule
+    MessagensPageRoutingModule
   ],
-  declarations: [TabsResponsavelPage]
+  declarations: [MessagensPage]
 })
-export class TabsResponsavelPageModule {}
+export class MessagensPageModule {}

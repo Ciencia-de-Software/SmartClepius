@@ -4,14 +4,39 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-content [fullscreen]="true">
-    <ion-header collapse="condense">
-      <ion-toolbar>
-        <ion-title size="large">Responsável</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-   <app-explore-container name="Responsavel page"></app-explore-container>
+<ion-content [fullscreen]="true">
+  <div class="corpo-responsavel">
+    <table>
+      <tr>
+        <td rowspan="4">
+          <ion-img class="perfil" src="https://cdn.comprerural.com/wp-content/uploads/2019/05/vaca-2.jpg"></ion-img>
+        </td>
+        <td>Paciente: Fulano de Tal</td>
+      </tr>
+      <tr>
+        <td>Leito: Cama</td>
+      </tr>
+      <tr>
+        <td>Status: Estável</td>
+      </tr>
+      <tr>
+        <td><a routerLink="/status-paciente">Ver status completo</a></td>
+      </tr>
+    </table>
+  </div>
 </ion-content>
-<ion-button class="botão-inicio" color="danger" expand="block" routerLink="/home">Voltar</ion-button>
+<div class="botoes">
+  <ion-button expand="full" shape="round" routerLink="/cadastro">
+    <ion-icon slot="start" name="person-add-outline"></ion-icon>
+    Alterar Cadastro
+  </ion-button>
+  <br />
+  <ion-button expand="full" shape="round" routerLink="/chat">
+    <ion-icon slot="start" name="chatbubble-ellipses-outline"></ion-icon>
+    Chat
+  </ion-button>
+  <br />
+  <ion-button color="danger" routerLink="/home">
+    Sair
+  </ion-button>
+</div>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" routerLink="/equipe-medica">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Alteração de Status</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="corpo">
+    <p>Escolha o tipo de alteração e digite uma descrição para a mesma:</p>
+  </div>
+
+  <ion-item>
+    <ion-label>Tipo de alteração:</ion-label>
+    <ion-select okText="Selecionar" cancelText="Cancelar">
+      <ion-select-option value="Cardápio">Cardápio</ion-select-option>
+      <ion-select-option value="Condição">Condição</ion-select-option>
+      <ion-select-option value="Leito">Leito</ion-select-option>
+      <ion-select-option value="Status">Status</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Descrição</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+</ion-content>
+<div class="bottons">
+  <ion-button shape="round" color="danger">Cancelar</ion-button>
+  <ion-button expand="full" shape="round">Enviar</ion-button>
+</div>
