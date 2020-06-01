@@ -13,16 +13,32 @@
     </ion-toolbar>
   </ion-header>
 
-  <p class="titulo-selecao"><strong>Selecione a opção que mais se encaixa com seu perfil:</strong></p>
+  <p class="titulo-selecao">
+    <strong>Selecione a opção que mais se encaixa com seu perfil:</strong>
+  </p>
 
   <div class="container">
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button class="botão-inicio" color="success" expand="block" routerLink="/login">Equipe Médica</ion-button>
+          <ion-button
+            class="botão-inicio"
+            color="success"
+            expand="block"
+            (click)="setType('equipeMedica')"
+            routerLink="/login"
+            >Equipe Médica</ion-button
+          >
         </ion-col>
         <ion-col>
-          <ion-button class="botão-inicio" color="success" expand="block" routerLink="/responsavel">Responsável</ion-button>
+          <ion-button
+            class="botão-inicio"
+            color="success"
+            expand="block"
+            (click)="setType('responsavel')"
+            routerLink="/login"
+            >Responsável</ion-button
+          >
         </ion-col>
       </ion-row>
     </ion-grid>
