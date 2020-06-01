@@ -23,15 +23,7 @@ export class LoginPage implements OnInit {
   async handleLogin() {
     if (this.login === 'user' && this.password === 'user') {
       this.router.navigate(['/responsavel']);
-    } else {
-      const alert = await this.alertController.create({
-        header: 'Login/Senha incorretos',
-        buttons: ['OK']
-      });
-      await alert.present();
-    }
-
-    if (this.login === 'admin' && this.password === 'root') {
+    } else if (this.login === 'admin' && this.password === 'root') {
       this.router.navigate(['/equipe-medica']);
     } else {
       const alert = await this.alertController.create({
