@@ -14,7 +14,7 @@
 
   <ion-item>
     <ion-label>Tipo de alteração:</ion-label>
-    <ion-select okText="Selecionar" cancelText="Cancelar">
+    <ion-select okText="Selecionar" cancelText="Cancelar" [(ngModel)]="selectOptions">
       <ion-select-option value="Cardápio">Cardápio</ion-select-option>
       <ion-select-option value="Status">Status</ion-select-option>
       <ion-select-option value="Leito">Leito</ion-select-option>
@@ -24,10 +24,10 @@
 
   <ion-item>
     <ion-label position="floating">Descrição</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="description"></ion-input>
   </ion-item>
 </ion-content>
 <div class="bottons">
-  <ion-button shape="round" color="danger">Cancelar</ion-button>
-  <ion-button expand="full" shape="round">Enviar</ion-button>
+  <ion-button shape="round" color="danger" (click)="resetInputs()">Cancelar</ion-button>
+  <ion-button expand="full" shape="round" (click)="handleSubmit()">Enviar</ion-button>
 </div>

@@ -15,36 +15,36 @@
 
   <ion-item>
     <ion-label position="floating">Nome:</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="name"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">RG:</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="rg"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">CPF:</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="cpf"></ion-input>
   </ion-item>
   <br />
   <ion-item>
     <ion-label>Nascimento:</ion-label>
-    <ion-datetime displayFormat="DD/MM/YYYY" placeholder="Selecione"></ion-datetime>
+    <ion-datetime displayFormat="DD/MM/YYYY" placeholder="Selecione" [(ngModel)]="birthday"></ion-datetime>
   </ion-item>
   <ion-item>
     <ion-label position="floating">E-mail:</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="email"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Senha:</ion-label>
-    <ion-input type="password"></ion-input>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Repita a senha:</ion-label>
-    <ion-input type="password"></ion-input>
+    <ion-input type="password" [(ngModel)]="passwordTest"></ion-input>
   </ion-item>
   <br />
   <div class="seção-botões">
-    <ion-button class="botão-cadastrar" color="secondary" expand="block" routerLink="/login">Cadastrar</ion-button>
+    <ion-button class="botão-cadastrar" color="secondary" expand="block" (click)="handleRegister()">Cadastrar</ion-button>
     <br />
     <ion-button class="botão-cancelar-cadastro" color="danger" routerLink="/home">Cancelar</ion-button>
   </div>
