@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { NavController } from '@ionic/angular';
 
-import isCPF from '../../../util/isCPF';
+/*import isCPF from '../../../util/isCPF';*/
 
 @Component({
   selector: 'app-cadastro',
@@ -10,20 +12,30 @@ import isCPF from '../../../util/isCPF';
   styleUrls: ['./cadastro.page.scss'],
 })
 export class CadastroPage implements OnInit {
-  name = '';
-  rg = '';
-  cpf = '';
-  birthday = 0;
-  email = '';
-  password = '';
+  id:string;
+  api="http://localhost/api/";
+  contato = {
+    "id": 0,
+    "nome": "",
+    "rg": "",
+    "cpf": "",
+    "endereco": "",
+    "telefone": "",
+    "email": "",
+    "senha": ""
+  };
+  password = this.contato.senha;
   passwordTest = '';
 
-  constructor(public alertController: AlertController, private router: Router) { }
+  constructor(public alertController: AlertController, private router: Router, private http:HttpClient, private navCtrl:NavController) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   async handleRegister() {
+    this.http.post<any>(this.api+"inclusao.php", this.contato).subscribe( dados => {
+      this.navCtrl.navigateBack('/home');
+    });
+
     if (this.password !== this.passwordTest) {
       const alert2 = await this.alertController.create({
         header: 'Senha inválida',
@@ -32,15 +44,15 @@ export class CadastroPage implements OnInit {
       await alert2.present();
       return false;
     }
-    if (!isCPF(this.cpf)) {
+    /*if (!isCPF(this.contato.cpf)) {
       const alert2 = await this.alertController.create({
         header: 'CPF inválido',
         buttons: ['OK']
       });
       await alert2.present();
       return false;
-    }
-    if (this.email === '' || this.name === '' || this.password === '' || this.rg === '') {
+    }*/
+    if (this.contato.nome === '' || this.contato.rg === '' || this.contato.cpf === '' || this.contato.endereco === '' || this.password === '' || this.contato.telefone === '' || this.contato.email === '') {
       const alert2 = await this.alertController.create({
         header: 'Informações inválidas',
         buttons: ['OK']
@@ -55,5 +67,4 @@ export class CadastroPage implements OnInit {
     await alert.present();
     this.router.navigate(['/home']);
   }
-
 }

@@ -15,40 +15,35 @@
 
   <ion-item>
     <ion-label position="floating">Nome:</ion-label>
-    <ion-input [(ngModel)]="name"></ion-input>
+    <ion-input type= "text" [(ngModel)]= "contato.nome"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">RG:</ion-label>
-    <ion-input [(ngModel)]="rg"></ion-input>
+    <ion-input [(ngModel)]= "contato.rg"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">CPF:</ion-label>
-    <ion-input [(ngModel)]="cpf"></ion-input>
+    <ion-input [(ngModel)]= "contato.cpf"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label position="floating">Endereço:</ion-label>
-    <ion-input></ion-input>
+    <ion-label type= "text" position="floating">Endereço:</ion-label>
+    <ion-input [(ngModel)]= "contato.endereco"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label position="floating">CEP:</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <br />
-  <ion-item>
-    <ion-label>Nascimento:</ion-label>
-    <ion-datetime displayFormat="DD/MM/YYYY" placeholder="Selecione" [(ngModel)]="birthday"></ion-datetime>
+    <ion-label type= "tel" position="floating">Telefone:</ion-label>
+    <ion-input [(ngModel)]= "contato.telefone"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">E-mail:</ion-label>
-    <ion-input [(ngModel)]="email"></ion-input>
+    <ion-input type= "email" [(ngModel)]= "contato.email"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Senha:</ion-label>
-    <ion-input type="password" [(ngModel)]="password"></ion-input>
+    <ion-input type="password" [(ngModel)]= "contato.senha"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Repita a senha:</ion-label>
-    <ion-input type="password" [(ngModel)]="passwordTest"></ion-input>
+    <ion-input type="password" [(ngModel)]= "passwordTest"></ion-input>
   </ion-item>
   <br />
   <div class="seção-botões">
