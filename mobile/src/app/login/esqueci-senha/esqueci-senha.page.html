@@ -3,13 +3,10 @@
     <h1 class="titulo-esqueci-senha">Digite seu CPF:</h1>
 
     <ion-item>
-      <ion-input placeholder="Digite aqui" [(ngModel)]="cpf"></ion-input>
-      <ion-input type="number" placeholder="Digite aqui"></ion-input>
+      <ion-input placeholder="Digite aqui" [(ngModel)]= "contatos.cpf"></ion-input>
     </ion-item>
     <br />
     <ion-button color="secondary" (click)="handleForgotPass()">Confirmar</ion-button>
   </div>
 </ion-content>
-<ion-button class="botão-inicio" color="danger" routerLink="/login"
-  >Cancelar</ion-button
->
+<ion-button class="botão-inicio" color="danger" routerLink="/login">Cancelar</ion-button>

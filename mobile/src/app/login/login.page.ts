@@ -1,5 +1,6 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { AlertController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 
@@ -9,29 +10,32 @@ import { Observable } from 'rxjs';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  login = '';
-  password = '';
+  contatos = {
+    "cpf": "",
+    "senha": ""
+  };
+  api = "http://localhost/api/login.php";
 
   state$: Observable<object>;
 
-  constructor(private router: Router, public alertController: AlertController) { }
+  constructor(private http: HttpClient, private router: Router, public alertController: AlertController) { }
 
   ngOnInit() {
     console.log(this.state$);
   }
 
-  async handleLogin() {
-    if (this.login === 'user' && this.password === 'user') {
-      this.router.navigate(['/responsavel']);
-    } else if (this.login === 'admin' && this.password === 'root') {
-      this.router.navigate(['/equipe-medica']);
-    } else {
-      const alert = await this.alertController.create({
-        header: 'Login/Senha incorretos',
-        buttons: ['OK']
-      });
-      await alert.present();
-    }
-  }
-
+  lerContatos() {
+    this.http.get<any>(this.api + "?cpf=" + this.contatos.cpf + "&senha=" + this.contatos.senha).subscribe(async dados => {
+      this.contatos = dados;
+      if (dados != "" && dados != null && dados != undefined){
+        this.router.navigate(['/responsavel']);
+      } else {
+        const alert = await this.alertController.create({
+          header: 'Login/Senha incorretos',
+          buttons: ['OK']
+        });
+        await alert.present();
+      }
+    });
+  };
 }

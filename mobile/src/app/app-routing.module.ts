@@ -46,7 +46,12 @@ const routes: Routes = [
   {
     path: 'status-paciente',
     loadChildren: () => import('./responsavel/status-paciente/status-paciente.module').then( m => m.StatusPacientePageModule)
+  },
+  {
+    path: 'nova-senha',
+    loadChildren: () => import('./login/nova-senha/nova-senha.module').then( m => m.NovaSenhaPageModule)
   }
+
 ];
 
 @NgModule({

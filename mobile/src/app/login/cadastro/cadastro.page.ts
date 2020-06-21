@@ -24,8 +24,6 @@ export class CadastroPage implements OnInit {
     "email": "",
     "senha": ""
   };
-  password = this.contato.senha;
-  passwordTest = '';
 
   constructor(public alertController: AlertController, private router: Router, private http:HttpClient, private navCtrl:NavController) { }
 
@@ -35,24 +33,7 @@ export class CadastroPage implements OnInit {
     this.http.post<any>(this.api+"inclusao.php", this.contato).subscribe( dados => {
       this.navCtrl.navigateBack('/home');
     });
-
-    if (this.password !== this.passwordTest) {
-      const alert2 = await this.alertController.create({
-        header: 'Senha inválida',
-        buttons: ['OK']
-      });
-      await alert2.present();
-      return false;
-    }
-    /*if (!isCPF(this.contato.cpf)) {
-      const alert2 = await this.alertController.create({
-        header: 'CPF inválido',
-        buttons: ['OK']
-      });
-      await alert2.present();
-      return false;
-    }*/
-    if (this.contato.nome === '' || this.contato.rg === '' || this.contato.cpf === '' || this.contato.endereco === '' || this.password === '' || this.contato.telefone === '' || this.contato.email === '') {
+    if (this.contato.nome === '' || this.contato.rg === '' || this.contato.cpf === '' || this.contato.endereco === '' || this.contato.senha === '' || this.contato.telefone === '' || this.contato.email === '') {
       const alert2 = await this.alertController.create({
         header: 'Informações inválidas',
         buttons: ['OK']

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-
-import isCPF from '../../../util/isCPF';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-esqueci-senha',
@@ -9,25 +10,31 @@ import isCPF from '../../../util/isCPF';
   styleUrls: ['./esqueci-senha.page.scss'],
 })
 export class EsqueciSenhaPage implements OnInit {
-  cpf = '';
+  contatos = {
+    "cpf": ""
+  };
+  api = "http://localhost/api/esqueci-senha.php";
 
-  constructor(public alertController: AlertController) {}
+  state$: Observable<object>;
 
-  ngOnInit() {}
+  constructor(private http: HttpClient, private router: Router, public alertController: AlertController) {}
 
-  async handleForgotPass() {
-    if (!isCPF(this.cpf)) {
-      const alert1 = await this.alertController.create({
-        header: 'CPF Inválido',
-        buttons: ['OK']
-      });
-      return await alert1.present();
-    } else {
-      const alert2 = await this.alertController.create({
-        header: 'Sua senha foi enviada para seu e-mail!',
-        buttons: ['OK']
-      });
-      return await alert2.present();
-    }
+  ngOnInit() {
+    console.log(this.state$);
+  }
+
+  handleForgotPass() {
+    this.http.get<any>(this.api + "?cpf=" + this.contatos.cpf).subscribe(async dados => {
+      this.contatos = dados;
+      if (dados != "" && dados != null && dados != undefined){
+        this.router.navigate(['/nova-senha']);
+      } else {
+        const alert = await this.alertController.create({
+          header: 'CPF Inválido',
+          buttons: ['OK']
+        });
+        await alert.present();
+      }
+    });
   }
 }
