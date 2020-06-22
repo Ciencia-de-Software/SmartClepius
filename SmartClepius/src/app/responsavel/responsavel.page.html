@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Responsável</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="corpo-responsavel">
+    <table>
+      <tr>
+        <td rowspan="4">
+          <ion-img class="perfil" src="https://cdn.comprerural.com/wp-content/uploads/2019/05/vaca-2.jpg"></ion-img>
+        </td>
+        <td>Paciente: {{pacient}}</td>
+      </tr>
+      <tr>
+        <td>Leito: {{bed}}</td>
+      </tr>
+      <tr>
+        <td>Status: {{status}}</td>
+      </tr>
+      <tr>
+        <td><a routerLink="/status-paciente">Ver status completo</a></td>
+      </tr>
+    </table>
+  </div>
+</ion-content>
+<div class="botoes">
+  <ion-button expand="full" shape="round" routerLink="/cadastro">
+    <ion-icon slot="start" name="person-add-outline"></ion-icon>
+    Alterar Cadastro
+  </ion-button>
+  <br />
+  <ion-button expand="full" shape="round" routerLink="/chat">
+    <ion-icon slot="start" name="chatbubble-ellipses-outline"></ion-icon>
+    Chat
+  </ion-button>
+  <br />
+  <ion-button color="danger" routerLink="/home">
+    Sair
+  </ion-button>
+</div>

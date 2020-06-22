@@ -1,0 +1,12 @@
+<ion-content [fullscreen]="true">
+  <div class="corpo-esqueci-senha">
+    <h1 class="titulo-esqueci-senha">Digite seu CPF:</h1>
+
+    <ion-item>
+      <ion-input placeholder="Digite aqui" [(ngModel)]= "contatos.cpf"></ion-input>
+    </ion-item>
+    <br />
+    <ion-button color="secondary" (click)="handleForgotPass()">Confirmar</ion-button>
+  </div>
+</ion-content>
+<ion-button class="botão-inicio" color="danger" routerLink="/login">Cancelar</ion-button>

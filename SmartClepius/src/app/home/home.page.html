@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      SmartClepius
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">SmartClepius</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <p class="titulo-selecao">
+    <strong>Selecione a opção que mais se encaixa com seu perfil:</strong>
+  </p>
+
+  <div class="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button
+            class="botão-inicio"
+            color="success"
+            expand="block"
+            (click)="setType('equipeMedica')"
+            routerLink="/equipe-medica"
+            >Equipe Médica</ion-button
+          >
+        </ion-col>
+        <ion-col>
+          <ion-button
+            class="botão-inicio"
+            color="success"
+            expand="block"
+            (click)="setType('responsavel')"
+            routerLink="/login"
+            >Responsável</ion-button
+          >
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
