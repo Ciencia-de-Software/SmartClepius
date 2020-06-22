@@ -3,6 +3,7 @@ import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { NavController } from '@ionic/angular';
+import { async } from '@angular/core/testing';
 
 /*import isCPF from '../../../util/isCPF';*/
 
@@ -29,23 +30,24 @@ export class CadastroPage implements OnInit {
 
   ngOnInit() {}
 
-  async handleRegister() {
-    this.http.post<any>(this.api+"inclusao.php", this.contato).subscribe( dados => {
+  handleRegister() {
+    this.http.post<any>(this.api+"inclusao.php", this.contato).subscribe( async dados => {
+      if (this.contato.nome === '' || this.contato.rg === '' || this.contato.cpf === '' || this.contato.endereco === '' || this.contato.senha === '' || this.contato.telefone === '' || this.contato.email === '') {
+        const alert2 = await this.alertController.create({
+          header: 'Informações inválidas',
+          buttons: ['OK']
+        });
+        await alert2.present();
+        return false;
+      } else {
+        const alert = await this.alertController.create({
+          header: 'Cadastro realizado com sucesso!',
+          buttons: ['OK']
+        });
+        await alert.present();
+        this.router.navigate(['/home']);
+      }
       this.navCtrl.navigateBack('/home');
     });
-    if (this.contato.nome === '' || this.contato.rg === '' || this.contato.cpf === '' || this.contato.endereco === '' || this.contato.senha === '' || this.contato.telefone === '' || this.contato.email === '') {
-      const alert2 = await this.alertController.create({
-        header: 'Informações inválidas',
-        buttons: ['OK']
-      });
-      await alert2.present();
-      return false;
-    }
-    const alert = await this.alertController.create({
-      header: 'Cadastro realizado com sucesso!',
-      buttons: ['OK']
-    });
-    await alert.present();
-    this.router.navigate(['/home']);
   }
 }
